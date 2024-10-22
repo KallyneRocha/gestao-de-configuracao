@@ -13,6 +13,13 @@ app.get('/api/produtos-d3', (req, res) => {
     res.json(ProdutosD3);
 });
 
+app.post('/api/produtos-d3', (req, res) => {
+    const novoProduto = req.body;
+    novoProduto.id = ProdutosD3.length + 1;
+    ProdutosD3.push(novoProduto);
+    res.status(201).json(novoProduto);
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
