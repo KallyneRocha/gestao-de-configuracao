@@ -5,6 +5,7 @@ Esta é uma API REST simples para gerenciar produtos da minha loja de impressão
 ## Funcionalidades
 
 - **GET** `/api/produtos-d3`: Obtém a lista de produtos.
+- **POST** `/api/produtos-d3`: Registra um novo produto.
 
 ## Pré-requisitos
 
@@ -71,3 +72,36 @@ Certifique-se de ter instalado:
         }
     ]
    ```
+### Testando o método POST
+
+1. No Postman, faça uma requisição POST para a seguinte URL:
+
+   
+   POST http://localhost:8080/api/produtos-d3
+   
+
+2. No corpo da requisição, selecione o formato *raw* e o tipo *JSON*. Insira os dados do novo produto:
+
+   json
+   {
+     "nome":"Waddles",
+     "altura":"10cm",
+     "preco": "R$30,00"
+   }
+   
+
+3. A resposta será o novo produto adicionado:
+
+   json
+   {
+     "nome":"Waddles",
+     "altura":"10cm",
+     "preco": "R$30,00"
+   }
+
+## Fluxo de Trabalho Utilizado
+
+O fluxo de trabalho seguido foi o **GitHub Flow**, que é ideal para projetos simples com uma única versão em produção. O **GitHub Flow** foi escolhido porque:
+
+- **Versão única em produção**: O projeto é simples e não exige múltiplas versões ou releases.
+- **Desenvolvimento contínuo**: As atualizações são feitas diretamente na branch `main` após serem testadas, o que simplifica o processo de deploy.
